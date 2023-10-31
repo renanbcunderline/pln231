@@ -11,7 +11,9 @@ $(document).ready(function() {
         var tiporeceita = $("input[type='radio'][name='tiporeceita']:checked").val();
         var tempomedio = $('#tempo-medio-receita').val();
         var ingredientes = $('#ingredientes-receita').val();
-        var dateTime = new Date(); 
+        var estacao = $("input[type='radio'][name='estacao']:checked").val(); // Nova variável estacao
+        var regiao = $("input[type='radio'][name='regiao']:checked").val(); // Nova variável regiao
+        var instrIngr = $("input[type='radio'][name='ingredientes']:checked").val();
         var time = dateTime.toLocaleTimeString(); 
         // Clear
         $('#rec_title').html('');
@@ -24,7 +26,7 @@ $(document).ready(function() {
         $.ajax({ 
             url: '/pln231/', 
             type: 'POST', 
-            data: {tipo: tiporeceita, tempo: tempomedio, ingr: ingredientes}, 
+            data: {tipo: tiporeceita, tempo: tempomedio, ingr: ingredientes, estacao: estacao, regiao: regiao, instrIngr: instrIngr}, 
             dataType: 'json', 
             success: function(data) {
                 $('.btn').prop('disabled', false);
@@ -54,7 +56,7 @@ $(document).ready(function() {
                 $(".btn .spinner-border").hide();
             },
 
-            timeout: 9000
+            timeout: 29000
         }); 
     }); 
 });

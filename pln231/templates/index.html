@@ -1,7 +1,7 @@
 <html> 
 <head> 
     {% load static %}
-    <title>Receitas do Nordeste Brasileiro, por ChatGPT</title> 
+    <title>Receitas do Nordeste Brasileiro</title> 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.0/dist/js.cookie.min.js"></script> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> 
@@ -11,7 +11,7 @@
 </head> 
 <body> 
     <div class="container p-3"> 
-        <h3>Receitas do Nordeste Brasileiro, por ChatGPT</h3>
+        <h3>Receitas Brasileiras</h3>
         <br>
         <div class="mb-3"> 
             <form method="post"> 
@@ -21,6 +21,30 @@
                     <div class="">
                         <h5 access="false" id="control-39578">Especificações da receita</h5></div>
                     <div class="formbuilder-radio-group form-group field-tiporeceita">
+                        <label for="regiao"><b>Selecione uma região do Brasil:</b></label>
+                    <div class="radio-group">
+                        <div class="formbuilder-radio">
+                            <input type="radio" id="norte" name="regiao" value="norte">
+                            <label for="norte">Norte</label>
+                        </div>
+                        <div class="formbuilder-radio">
+                            <input type="radio" id="nordeste" name="regiao" value="nordeste" checked="checked">
+                            <label for="nordeste">Nordeste</label>
+                        </div>
+                        <div class="formbuilder-radio">
+                            <input type="radio" id="centro-oeste" name="regiao" value="centro-oeste">
+                            <label for="centro-oeste">Centro-Oeste</label>
+                        </div>
+                        <div class="formbuilder-radio">
+                            <input type="radio" id="sudeste" name="regiao" value="sudeste">
+                            <label for="sudeste">Sudeste</label>
+                        </div>
+                        <div class="formbuilder-radio">
+                            <input type="radio" id="sul" name="regiao" value="sul">
+                            <label for="sul">Sul</label>
+                        </div>
+                    <br>
+                    </div>
                         <label for="tiporeceita" class="formbuilder-radio-group-label"><b>Tipo</b></label>
                         <div class="radio-group">
                             <div class="formbuilder-radio">
@@ -38,17 +62,48 @@
                         </div>
                     </div>
                     <br>
+                    <div class="formbuilder-radio-group form-group field-estacao">
+                        <label for="estacao" class="formbuilder-radio-group-label"><b>Estação</b></label>
+                        <div class="radio-group">
+                            <div class="formbuilder-radio">
+                                <input name="estacao" access="false" id="estacao-verao" value="na estação verao" type="radio">
+                                <label for="estacao-verao">Verão</label>
+                            </div>
+                            <div class="formbuilder-radio">
+                                <input name="estacao" access="false" id="estacao-inverno" value="na estação inverno" type="radio">
+                                <label for="estacao-inverno">Inverno</label>
+                            </div>
+                            <div class="formbuilder-radio">
+                                <input name="estacao" access="false" id="estacao-neutro" value="" type="radio" checked="checked">
+                                <label for="estacao-neutro">Neutro</label>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
                     <div class="formbuilder-text form-group field-tempo-medio-receita">
                         <label for="tempo-medio-receita" class="formbuilder-text-label"><b>Tempo médio de preparo</b></label>
-                        <input type="text" class="form-control" name="tempo-medio-receita" access="false" value="30 minutos" maxlength="40" id="tempo-medio-receita">
+                        <input type="text" class="form-control" name="tempo-medio-receita" access="false" value="até 30 minutos" maxlength="40" id="tempo-medio-receita">
                     </div>
                     <br>
                     <div class="formbuilder-textarea form-group field-ingredientes-receita">
                         <label for="ingredientes-receita" class="formbuilder-textarea-label"><b>Ingredientes desejados</b></label>
                         <textarea type="textarea" class="form-control" name="ingredientes-receita" access="false" maxlength="140" id="ingredientes-receita">goiabada, queijo coalho</textarea>
                     </div>
-                </div>
-                <br>
+
+                    <div class="formbuilder-radio-group-ingr form-group field-ingredientes">
+                        <label for="ingredientes" class="formbuilder-radio-group-label"><b>Instrução para ingredientes:</b></label>
+                        <div class="radio-group">
+                            <div class="formbuilder-radio">
+                                <input name="ingredientes" access="false" id="opcao-1" value="estritamente apenas estes ingredientes" type="radio">
+                                <label for="apenas-ingredientes">Utilize apenas esses ingredientes</label>
+                            </div>
+                            <div class="formbuilder-radio">
+                                <input name="ingredientes" access="false" id="opcao-2" value="estes ingredientes como principais" type="radio" checked="checked">
+                                <label for="todos-ingredientes">Utilize esses ingredientes como principais</label>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
                 <button class="btn btn-primary btn-lg" type="submit" onclick="loading()">
                     <i class="spinner-border spinner-border-sm" role="status" style="display:none;"></i>
                     <span class="btn-text">Gerar receita</span>

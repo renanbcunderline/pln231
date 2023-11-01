@@ -6,11 +6,10 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/finalcontradiction/pln231?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/finalcontradiction/pln231?style=for-the-badge)
 
-<img src="imagem.png" alt="Exemplo imagem">
+<img src="/image.png" alt="Exemplo imagem">
 
 > Gerador de receitas com IA. <br>
-> A partir de uma aplicação Django e API do ChatGPT, tomando como ponto de partida [este material](https://www.geeksforgeeks.org/how-to-implement-chatgpt-in-django/),
-> Este projeto tem como objetivo ser um gerador de receitas de fácil utilização para sugerir opções ao usuário com base em: regiões brasileiras, época do ano, tempo de preparo, tipo de prato, ingredientes e como estes participam na receita.
+> A partir de uma aplicação Django e API do ChatGPT, tomando como ponto de partida [este material](https://www.geeksforgeeks.org/how-to-implement-chatgpt-in-django/), este projeto tem como objetivo ser um gerador de receitas de fácil utilização para sugerir opções ao usuário com base em: regiões brasileiras, época do ano, tempo de preparo, tipo de prato, ingredientes e como estes participam na receita.
 
 ## 💻 Pré-requisitos
 
@@ -38,7 +37,7 @@ Clone o repositório:
 
 Iniciando o Back-end:
 ```
-<python3 manage.py runserver>
+<python3 pln231/pln231/manage.py runserver>
 ```
 
 Acesse o endreço local `<127.0.0.1:8000/pln231>` pelo seu navegador para interagir com o sistema.
